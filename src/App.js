@@ -1,66 +1,36 @@
 import React from "react";
-import ClassCounter from "./Components/ClassCounter";
-import HookCounter from "./Components/HookCounter";
-import HookCounter2 from "./Components/HookCounter2";
-import HookCounter3 from "./Components/HookCounter3";
-import HookCounter4 from "./Components/HookCounter4";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from './Components/Home'
+import Basic from './Components/BasicHooks/Basic'
+import Reducer from './Components/useReducer/Reducer'
+import Context from './Components/ContextAPI/ContextAPI'
+import ReducerContext from './Components/Reducer_x_Context/ReducerXContext'
+import DataFetching from './Components/useReducer2/DataFetching'
 import "./App.css";
-import HookEffect from "./Components/HookEffect";
-import ClassCounterMouse from "./Components/ClassCounterMouse";
-import HookEffectMouse from "./Components/HookEffectMouse";
-import MouseContainer from "./Components/MouseContainer";
-import ClassIntervalCounter from "./Components/ClassIntervalCounter";
-import HookIntervalCounter from "./Components/HookIntervalCounter";
-import HookAPI from "./Components/HookAPI";
+import Callback from "./Components/Callback/Callback";
+import Memo from "./Components/Memo/Memo";
+import useRef from "./Components/useRef/useRef";
+import Doc from "./Components/CustomHooks/useDocumentTitle/Doc";
+import Counter from "./Components/CustomHooks/useCounter/Counter";
+import Input from "./Components/CustomHooks/useInput/Input";
 
 const App = () => {
   return (
     <div className="App">
-      <div className="mt-5">
-        <h3>Class Component</h3>
-        <ClassCounter />
-      </div>
-      <hr/>
-      <div className="mt-5">
-        <h3>Functional and useState</h3>
-        <HookCounter />
-      </div>
-      <hr/>
-      <div className="mt-5">
-        <HookCounter2/>
-      </div>
-      <hr/>
-      <div className="mt-5">
-        <h3>useState with Object</h3>
-        <HookCounter3/>
-      </div>
-      <hr/>
-      <div className="mt-5">
-        <HookCounter4/>
-      </div>
-      <hr/>
-      <div className="mt-5">
-        <HookEffect/>
-      </div>
-      <div className="mt-5">
-        <ClassCounterMouse/>
-      </div>
-      <div className="mt-5">
-        <HookEffectMouse/>
-      </div>
-      <hr/>
-      <div className="mt-5">
-        <MouseContainer/>
-      </div>
-      <div className="mt-5">
-        <ClassIntervalCounter/>
-      </div>
-      <div className="mt-">
-        <HookIntervalCounter/>
-      </div>
-      <div className="mt-5">
-        <HookAPI/>
-      </div>
+      <BrowserRouter>
+        <Route path='/' component={Home}/>
+        <Route path='/basic' component={Basic}/>
+        <Route path='/reducer' component={Reducer}/>
+        <Route path='/context' component={Context}/>
+        <Route path='/reducer-context' component={ReducerContext}/>
+        <Route path='/data-fetching' component={DataFetching}/>
+        <Route path='/callback' component={Callback}/>
+        <Route path='/memo' component={Memo}/>
+        <Route path='/ref' component={useRef}/>
+        <Route path='/doc' component={Doc}/>
+        <Route path='/usecounter' component={Counter}/>
+        <Route path='/useinput' component={Input}/>
+      </BrowserRouter>
     </div>
   );
 };

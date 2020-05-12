@@ -5,7 +5,6 @@ function HookEffect(props) {
   const [name, setName] = useState('')
 
   useEffect(()=>{
-    console.log('updated from useEffect')
     document.title = `Clicked ${count} times` 
   },[count])
 

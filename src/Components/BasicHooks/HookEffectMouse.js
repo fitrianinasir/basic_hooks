@@ -6,17 +6,14 @@ function HookEffectMouse(props) {
 
 
   useEffect(()=>{
-    console.log('useEffect called')
     window.addEventListener('mousemove', mouseTrigger)
 
     return()=>{
-      console.log('Component unmounting')
       window.removeEventListener('mousemove', mouseTrigger )
     }
   },[])
 
   const mouseTrigger = (e) =>{
-    console.log('Mouse eventtt')
     setX(e.clientX)
     setY(e.clientY)
   }

@@ -14,7 +14,6 @@ class ClassCounter extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if(prevState.count !== this.state.count){
-      console.log('updated from classCounter')
       document.title = `Clicked ${this.state.count} times`;
     }    
   }
